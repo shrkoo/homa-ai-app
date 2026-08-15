@@ -10,22 +10,19 @@ public class MainActivity extends Activity {
 
     private WebView webView;
 
-    private static final String HOMA_AI_URL =
-            "https://capable-aria-chat-flow.base44.app";
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         webView = new WebView(this);
 
-        WebSettings settings = webView.getSettings();
-        settings.setJavaScriptEnabled(true);
-        settings.setDomStorageEnabled(true);
+        WebSettings webSettings = webView.getSettings();
+        webSettings.setJavaScriptEnabled(true);
+        webSettings.setDomStorageEnabled(true);
 
         webView.setWebViewClient(new WebViewClient());
 
-        webView.loadUrl(HOMA_AI_URL);
+        webView.loadUrl("https://capable-aria-chat-flow.base44.app");
 
         setContentView(webView);
     }
